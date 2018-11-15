@@ -1,5 +1,5 @@
 # Use the alibaba ubuntu 16.04 source list
-
+sudo echo Defaults env_keep += \"http_proxy https_proxy\" >> /etc/sudoers
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp sources.list /etc/apt/sources.list
 
@@ -15,10 +15,10 @@ cp pip.conf ~/.pip/pip.conf
 
 # upgrade pip
 
-python -m pip install --upgrade pip
-python3 -m pip install --upgrade pip
+sudo python -m pip install --upgrade pip
+sudo python3 -m pip install --upgrade pip
 
-python -m pip install requests virtualenv pwntools
+sudo python -m pip install requests virtualenv pwntools
 
 # install peda
 
@@ -41,4 +41,4 @@ sh -x install.sh
 
 # one gadget
 
-gem install one_gadget
+sudo gem install one_gadget
