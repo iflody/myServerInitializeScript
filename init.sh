@@ -1,5 +1,5 @@
 # Use the alibaba ubuntu 16.04 source list
-sudo echo Defaults env_keep += \"http_proxy https_proxy\" >> /etc/sudoers
+sudo sh -c 'echo Defaults env_keep += \"http_proxy https_proxy\" >> /etc/sudoers'
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp sources.list /etc/apt/sources.list
 
@@ -25,10 +25,6 @@ sudo python -m pip install requests virtualenv pwntools
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
 
-# install oh my zsh
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # configure the vim
 
 cd ~ && git clone https://github.com/iflody/k-vim.git
@@ -42,3 +38,9 @@ sh -x install.sh
 # one gadget
 
 sudo gem install one_gadget
+
+sudo chsh -s /usr/bin/zsh root
+
+# install oh my zsh
+
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
